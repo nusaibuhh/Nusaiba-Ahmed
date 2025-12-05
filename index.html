@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nusaiba Ahmed — Landing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Work</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#miscellaneous">Miscellaneous</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="hero" id="home">
+      <div class="hero-inner">
+        <div class="left">
+          <h1 class="name"><span class="first">Nusaiba</span><br /><span class="last">Ahmed</span></h1>
+          <p class="role">Student | Emotion AI, NLP, Health Informatics Enthusiast</p>
+        </div>
+        <div class="right">
+          <!-- profile image placed on the right; supports webp/png/jpg named `me` in images/ -->
+          <picture>
+            <source srcset="images/me.png" type="image/png">
+            <img src="images/me.png" alt="Nusaiba Ahmed" class="profile-me">
+          </picture>
+        </div>
+      </div>
+    </main>
+    
+
+    <main>
+      <section id="find-quote" class="find-quote">
+        <div class="quote-wrap">
+          <blockquote class="big-quote">“We can change it all together, in the end you're gonna find That what we felt in our hearts was real the whole time”</blockquote>
+          <cite>— Sleeping With Sirens</cite>
+        </div>
+      </section>
+      <div class="spacer" aria-hidden="true"><!-- spacer so user can scroll to the quote --></div>
+    </main>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="introduction">
+      <div class="intro-container">
+        <h2>About Me</h2>
+        <div class="intro-content">
+          <div class="intro-text">
+            <p>Hello! I'm Nusaiba Ahmed, a passionate student exploring the fascinating intersections of technology and human experience. My journey centers around three key areas that I believe will shape our future:</p>
+            
+            <div class="focus-areas">
+              <div class="focus-item">
+                <h3>🤖 Emotion AI</h3>
+                <p>Understanding and interpreting human emotions through technology to create more empathetic and responsive systems.</p>
+              </div>
+              
+              <div class="focus-item">
+                <h3>💬 Natural Language Processing</h3>
+                <p>Bridging the gap between human communication and machine understanding to make technology more accessible.</p>
+              </div>
+              
+              <div class="focus-item">
+                <h3>🏥 Health Informatics</h3>
+                <p>Leveraging data and technology to improve healthcare outcomes and make medical information more actionable.</p>
+              </div>
+            </div>
+
+            <p>I'm driven by the belief that technology should enhance human potential, not replace it. Through my studies and projects, I aim to contribute to innovations that make a meaningful difference in people's lives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Local styles for the quote reveal on scroll */
+      .find-quote{display:flex;align-items:center;justify-content:center;min-height:60vh;padding:60px 20px;/* background uses images/torn.png from images/ */
+        background-image: url('./images/torn.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .quote-wrap{max-width:900px;text-align:center;opacity:1;transform:translateY(0);transition:opacity .6s ease, transform .6s ease}
+      .quote-wrap.reveal{opacity:1;transform:translateY(0)}
+  .big-quote{font-size:clamp(18px,3.6vw,30px);line-height:1.08;color:#111;margin:0 0 12px;font-weight:700;text-shadow:0 2px 4px rgba(255,255,255,0.8)}
+  cite{display:block;color:#f87b9e;font-weight:600;text-shadow:0 1px 2px rgba(255,255,255,0.6)}
+    </style>
+
+    <script>
+      // Reveal the quote when scrolled into view using IntersectionObserver
+      (function(){
+        const wrap = document.querySelector('.quote-wrap');
+        if(!wrap) return;
+        const io = new IntersectionObserver((entries, obs)=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting){
+              wrap.classList.add('reveal');
+              obs.unobserve(wrap);
+            }
+          })
+        },{threshold:0.28});
+        io.observe(wrap);
+      })();
+    </script>
+
+        <!-- Choose section: quick links as cards -->
+    <section id="choose" class="choose">
+      <div class="choose-inner">
+        <h2>⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖</h2>
+        <div class="cards">
+          <a class="card" href="#projects" aria-label="See projects">
+            <h3>Projects</h3>
+            <p>Selected works and experiments</p>
+          </a>
+          <a class="card" href="#experience" aria-label="See work">
+            <h3>Work</h3>
+            <p>Professional experience and roles</p>
+          </a>
+          <a class="card" href="#education" aria-label="See education">
+            <h3>Education</h3>
+            <p>Degrees, courses and certifications</p>
+          </a>
+          <a class="card" href="#research" aria-label="See research">
+            <h3>Research</h3>
+            <p>Papers, posters and labs</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="projects-container">
+        <h2>Projects</h2>
+        <p class="projects-intro">Here are some projects I've worked on during my academic journey and independent exploration.</p>
+        
+        <!-- Academic Projects -->
+        <div class="project-category">
+          <h3 class="category-title">Academic Projects</h3>
+          <div class="projects-list">
+            
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">7 Person Voting System</h4>
+                <p class="project-course">Course: CSE260: Digital Logic Design</p>
+                <p class="project-description">7 inputs from 7 people as 0 or 1 to determine majority vote using digital logic circuits. Fun fact: We did not have a 7-segment display, so we used LEDs and Kmap to indicate the result (0 or 1).</p>
+                <p class="project-tech"><strong>Components Used:</strong> AND gate, OR gate, NOT gate and LEDs as a display</p>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">Online Bookstore using Assembly Language</h4>
+                <p class="project-course">Course: CSE341: Microprocessors</p>
+                <p class="project-description">Developed an online bookstore application using assembly language, focusing on low-level programming and memory management.</p>
+                <p class="project-tech"><strong>Tech Stack:</strong> Assembly Language, x86 Architecture</p>
+              </div>
+              <div class="project-links">
+                <a href="https://docs.google.com/document/d/1y-0y3Sj4d11wrQ-kYACLGs9wB59tvLqqzkyKPmr8POw/edit?usp=sharing" class="project-btn doc-btn">Documentation</a>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">Smart Parking</h4>
+                <p class="project-course">Course: CSE350: Digital Electronics and Pulse Techniques</p>
+                <p class="project-description">Our project, Smart Parking, is based on a parking system where the entrance gate to the parking lot will only open when one or more slots are available for vehicles to park..</p>
+              </div>
+              <div class="project-links">
+                <a href="https://drive.google.com/drive/folders/1a3ODxxBstqVnZU2_y-wM2TamOE8eLHa2?usp=sharing" class="project-btn doc-btn">Documentation</a>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">Online Bookstore</h4>
+                <p class="project-course">Course: CSE370: Database</p>
+                <p class="project-description">We just built an online bookstore focusing on relational database concepts and SQL queries.</p>
+                <p class="project-tech"><strong>Tech Stack:</strong>MySQL, PHP, HTML, CSS</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/nusaibuhh/Online-Bookstore" class="project-btn github-btn">GitHub</a>
+              </div>
+            </div>
+
+           <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">Career Switch Prediction</h4>
+                <p class="project-course">Course: CSE422: Artificial intelligence</p>
+                <p class="project-description">The aim of this project is to predict if a person will change their career or not based on the dataset provided.</p>
+                <p class="project-tech"><strong>Tech Stack:</strong>Scikit-learn, Python, Pandas, Numpy, Seaborn, Matplotlib</p>
+              </div>
+              <div class="project-links">
+                <a href="https://docs.google.com/document/d/1NCeU2zh41rt-KfwxUB9vDJwaz-cAx0WoyqICNjVpwGc/edit?usp=sharing" class="project-btn doc-btn">Documentation</a>
+                <a href="https://colab.research.google.com/drive/1ouu99SpGibZO4zimiTF8DXJEQQFWIMGK?usp=sharing" class="project-btn github-btn">Code</a>
+              </div>
+            </div>
+
+           <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">3D Asteroid Dodger</h4>
+                <p class="project-course">Course: CSE423: Computer Graphics</p>
+                <p class="project-description">A 3D game where player dodges asteroids in space.</p>
+                <p class="project-tech"><strong>Tech Stack:</strong>Python, OPENGL</p>
+              </div>
+              <div class="project-links">
+                <a href="https://docs.google.com/document/d/1a_1je2EQ0wGj3akTB9LLGivIlBgaMxXpsarAyILliIM/edit?usp=sharing" class="project-btn doc-btn">Documentation</a>
+                <a href="https://github.com/nusaibuhh/3D-Asteroid-Dodger" class="project-btn github-btn">GitHub</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Independent Projects -->
+        <div class="project-category">
+          <h3 class="category-title">Independent Projects</h3>
+          <div class="projects-list">
+            
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">ReMedAI</h4>
+                <p class="project-description">A project intended to combat antibiotic resistance using technology, especially AI driven chatbots which suggest home remedies to relive symptoms, checks overdose and educates people on Antibiotic Resistance</p>
+                <p class="project-tech"><strong>Tech Stack:</strong> HTML, CSS, PHP, MySQL </p>
+              </div>
+              <div class="project-links">
+                <a href="https://docs.google.com/document/d/1QamnzqntjM7tiMtMJ7MZ7ZS5gmUQv6zOyqqTYARF2Q8/edit?usp=sharing" class="project-btn doc-btn">Documentation</a>
+                <a href="https://github.com/nusaibuhh/antibiotics" class="project-btn github-btn">GitHub</a>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-info">
+                <h4 class="project-title">BizPilot</h4>
+                <p class="project-description">A web app that empowers entrepreneurs to transform raw ideas into thriving businesses and sustain them through intelligent automation from ideation and multi-faceted go-to-market strategies, to advanced supply-chain optimization, predictive production forecasting, and adaptive growth scaling. AI delivers personalized, step-by-step guidance.</p>
+                <p class="project-tech"><strong>Tech Stack:</strong> Django, HTML, CSS, MySQL</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/nusaibuhh/BizPilot" class="project-btn github-btn">GitHub</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="experience-container">
+        <h2>Professional Experience</h2>
+        <p class="experience-intro">My journey in technology and leadership roles that have shaped my expertise.</p>
+        
+        <div class="experience-timeline">
+          
+          <div class="experience-item">
+            <div class="experience-date">July 2025 - Present</div>
+            <div class="experience-content">
+              <h3 class="experience-title">Volunteer</h3>
+              <h4 class="experience-company">BIOSE Research Center</h4>
+              <div class="experience-description">
+                <p>At BIOSE, I assist in developing a wearable device by building and tuning analog filter circuits and preparing to implement their digital counterparts in Python.</p>
+                <ul class="experience-highlights">
+                  <li>Developed Analog Filters like Twin T Notch Filter, Sullen-Key Filter and Butterworth Filter</li>
+                  <li><a href="https://docs.google.com/document/d/1JwcikqyBK0rREm668tmcJsRKtWS_iNSPlY29CZK-Ybs/edit?usp=sharing" style="color: var(--accent-neon); text-decoration: none; font-weight: 600;">Work Documentation →</a></li>
+                </ul>
+              </div>
+              <div class="experience-skills">
+                <span class="skill-tag">Circuits</span>
+                <span class="skill-tag">Analog Filters</span>
+                <span class="skill-tag">Research</span>
+                <span class="skill-tag">Teamwork</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-date">Oct. 2025 - Present</div>
+            <div class="experience-content">
+              <h3 class="experience-title">AI Content Creator</h3>
+              <h4 class="experience-company">@that_nlp_dev</h4>
+              <div class="experience-description">
+                <p>I teach strangers on the Internet on the basics of AI agents and Automation and how to code them using tools like Agno and Langchain.</p>
+                <ul class="experience-highlights">
+                  <li>100+ Instagram followers and 4000+ views</li>
+                  <li>800+ Threads followers and 70,000+ views</li>
+                  <li>Currenly building an Intro to AI agents guide</li>
+                </ul>
+              </div>
+              <div class="experience-skills">
+                <span class="skill-tag">Agno</span>
+                <span class="skill-tag">Langchain</span>
+                <span class="skill-tag">AI agents</span>
+                <span class="skill-tag">AI Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-date">2022 - Present</div>
+            <div class="experience-content">
+              <h3 class="experience-title">Home Tutor</h3>
+              <h4 class="experience-company">Self Employed</h4>
+              <div class="experience-description">
+                <p>I tutor students—from O-level candidates to a current 4th grader—helping them excel academically with personalized guidance.</p>
+                <ul class="experience-highlights">
+                  <li>Mentored students across various subjects and grade levels</li>
+                  <li>Developed customized lesson plans to meet individual learning needs</li>
+                  <li>Achieved 95% student satisfaction rating</li>
+                </ul>
+              </div>
+              <div class="experience-skills">
+                <span class="skill-tag">Teaching</span>
+                <span class="skill-tag">Maths</span>
+                <span class="skill-tag">Biology</span>
+                <span class="skill-tag">Mentoring</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-date">2022 - Present</div>
+            <div class="experience-content">
+              <h3 class="experience-title">Graphic Designer, Treasurer</h3>
+              <h4 class="experience-company">BRAC University Indoor Games Club</h4>
+              <div class="experience-description">
+                <p>I work as a graphic designer, creating posters and visual materials for events and promotions at the BRAC University Indoor Games Club.</p>
+                <ul class="experience-highlights">
+                  <li>Designed promotional materials for university events and activities</li>
+                  <li>Managed club affairs like the Backend of a software, hidden yet working smoothly</li>
+                  <li><a href="https://www.behance.net/na350" style="color: var(--accent-neon); text-decoration: none; font-weight: 600;">Portfolio →</a></li>
+                </ul>
+              </div>
+              <div class="experience-skills">
+                <span class="skill-tag">Graphic Design</span>
+                <span class="skill-tag">Poster Design</span>
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Organization</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+      <div class="education-container">
+        <h2>Education</h2>
+        <p class="education-intro">My academic journey and continuous learning in technology and computer science.</p>
+        
+        <div class="education-timeline">
+          
+          <div class="education-item">
+            <div class="education-date">2022 - 2026</div>
+            <div class="education-content">
+              <h3 class="education-degree">Bachelor of Science in Computer Science and Engineering</h3>
+              <h4 class="education-institution">BRAC University, Dhaka, Bangladesh</h4>
+              <div class="education-description">
+                <p>Pursuing a comprehensive degree in Computer Science and Engineering with focus on Artificial Intelligence, Machine Learning, and Affective Computing.</p>
+                <div class="education-details">
+                 
+                  <div class="education-status">
+                    <strong>Status:</strong> Currently in 10th Semester
+                  </div>
+                </div>
+                <h5>Relevant Coursework:</h5>
+                <ul class="coursework-list">
+                  <li>Artificial Intelligence (CSE422)</li>
+                  <li>Computer Graphics (CSE423)</li>
+                  <li>Database Systems (CSE370)</li>
+                  <li>Digital Logic Design (CSE260)</li>
+                  <li>Microprocessors (CSE341)</li>
+                  <li>Digital Pulse Techniques (CSE350)</li>
+                  <li>VLSI Design (CSE460)</li>
+                  <li>Data Structures and Algorithms</li>
+                  <li>Software Engineering</li>
+                </ul>
+              </div>
+              <div class="education-skills">
+                <span class="skill-tag">Computer Science</span>
+                <span class="skill-tag">Artificial Intelligence</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Software Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="education-date">2020 - 2022</div>
+            <div class="education-content">
+              <h3 class="education-degree">A-Levels</h3>
+              <h4 class="education-institution">Scholastica, Dhaka</h4>
+              <div class="education-description">
+                <p>Completed A-levels with concentration in Science group, building strong foundation in Mathematics, Physics, Chemistry, and Biology.</p>
+                <div class="education-details">
+                
+                  <div class="education-group">
+                    <strong>Group:</strong> Science
+                  </div>
+                </div>
+                <h5>Key Subjects:</h5>
+                <ul class="coursework-list">
+                  <li>Mathematics</li>
+                  <li>Physics</li>
+                  <li>Chemistry</li>
+                  <li>Biology</li>
+                </ul>
+              </div>
+              <div class="education-skills">
+                <span class="skill-tag">Mathematics</span>
+                <span class="skill-tag">Physics</span>
+                <span class="skill-tag">Chemistry</span>
+                <span class="skill-tag">Biology</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="education-date">2018 - 2020</div>
+            <div class="education-content">
+              <h3 class="education-degree">O-levels</h3>
+              <h4 class="education-institution">Scholastica, Dhaka</h4>
+              <div class="education-description">
+                <p>Completed O-levels with excellent academic performance across all subjects, particularly excelling in Physics, Chemistry and Mathematics.</p>
+                <div class="education-details">
+                  <div class="education-group">
+                    <strong>Group:</strong> Science
+                  </div>
+                </div>
+                <h5>Key Subjects:</h5>
+                <ul class="coursework-list">
+                  <li>General Mathematics</li>
+                  <li>Additional Mathematics</li>
+                  <li>Physics</li>
+                  <li>Chemistry</li>
+                  <li>Biology</li>
+                  <li>Computer Science</li>
+                  <li>English</li>
+                  <li>Bangla</li>
+                </ul>
+              </div>
+              <div class="education-skills">
+                <span class="skill-tag">Academic Excellence</span>
+                <span class="skill-tag">Science Foundation</span>
+                <span class="skill-tag">Mathematics</span>
+                <span class="skill-tag">Computer Science</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+      <div class="research-container">
+        <h2>Research</h2>
+        <p class="research-intro">My research contributions and ongoing investigations in computer science.</p>
+        
+        <!-- Research Areas -->
+        <div class="research-areas">
+          <h3 class="section-subtitle">Research Interests</h3>
+          <div class="research-interests-tags">
+            <span class="interest-tag">Artificial Intelligence</span>
+            <span class="interest-tag">Machine Learning</span>
+            <span class="interest-tag">Emotion AI</span>
+            <span class="interest-tag">Computer Vision</span>
+            <span class="interest-tag">Affective Computing</span>
+            <span class="interest-tag">Computational Psychology</span>
+            <span class="interest-tag">Natural Language Processing</span>
+            <span class="interest-tag">IoT Devices</span>
+            <span class="interest-tag">Human-Computer Interaction</span>
+            <span class="interest-tag">Bioinformatics</span>
+            <span class="interest-tag">Computational Biology</span>
+            <span class="interest-tag">Health Informatics</span>
+          </div>
+        </div>
+
+        <!-- Papers -->
+        <div class="publications-section">
+          <h3 class="section-subtitle">Ongoing Research</h3>
+          
+          <div class="publication-item">
+            <div class="publication-header">
+              <h4 class="paper-title">Zero-shot emotion detection on Romanized Bengali using pre-trained LLMs</h4>
+              <span class="publication-status">In Progress</span>
+            </div>
+            <div class="publication-meta">
+              <div class="publication-start-date">
+                <span class="meta-label">Started:</span> September 2025
+              </div>
+              <div class="publication-documentation">
+                <span class="meta-label">Documentation:</span>
+                <a href="https://docs.google.com/document/d/1nzitPdxlNGn2aYk9tnNbXE7NG3jrteipYEIt_FrIFK8/edit?tab=t.nq6fuuoefdx4" class="doc-link">Research Documentation</a> 
+              </div>
+            </div>
+            <div class="publication-details">
+              <p class="publication-authors">Nusaiba Ahmed, Dipita Tasnim</p>
+              <p class="publication-description">Emotion recognition models have advanced rapidly with large pre-trained language models, especially in English. However, when it comes to low-resource or code-mixed dialects like Banglish (transliterated Bengali), these models often fail to capture emotional nuance due to limited training data and linguistic diversity. This work explores how lightweight pre-trained models and multilingual architectures can be adapted to recognize emotions in Banglish without extensive fine-tuning.</p>
+              <div class="publication-tags">
+                <span class="research-tag">NLP</span>
+                <span class="research-tag">Zero-shot Learning</span>
+                <span class="research-tag">Few-shot Learning</span>
+                <span class="research-tag">Hugging Face</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-item">
+            <div class="publication-header">
+              <h4 class="paper-title">Enrichment of Neanderthal-Derived Variants in Autism: A Study in Asian Populations</h4>
+              <span class="publication-status">In Progress</span>
+            </div>
+            <div class="publication-meta">
+              <div class="publication-start-date">
+                <span class="meta-label">Started:</span> November 2025
+              </div>
+              <div class="publication-documentation">
+                <span class="meta-label">Documentation:</span>
+                <a href="https://docs.google.com/document/d/1RkuNw20eCwfI9lBD-rjVPw8jLAdreY7qII5VLVzYER8/edit?usp=sharing" class="doc-link">Research Documentation</a> 
+
+              </div>
+            </div>
+            <div class="publication-details">
+              <p class="publication-authors">Ahnaf Raisa, Mahmuda Afsana Jui, Nusaiba Ahmed</p>
+              <p class="publication-description">I’m  collaborating with my Biotech friends on a computational study analyzing public genomic datasets to investigate whether autism-linked Neanderthal-derived SNPs found in European populations are similarly enriched in Asian populations.</p>
+              <div class="publication-tags">
+                <span class="research-tag">Bioinformatics</span>
+                <span class="research-tag">Biostatistics</span>
+                <span class="research-tag">Machine Learning</span>
+                <span class="research-tag">Deep Learning</span>
+              </div>
+            </div>
+          </div>
+
+
+        <!-- Research Projects -->
+        <div class="research-projects-section">
+          <h3 class="section-subtitle">Research Projects</h3>
+          
+          <div class="research-projects-grid">
+            
+            <div class="research-project-card">
+              <div class="project-header">
+                <h4>ReMedAI</h4>
+                <span class="project-duration">2025</span>
+              </div>
+              <div class="project-meta-info">
+                <div class="project-contributors">
+                  <span class="meta-label">Contributors:</span> Nusaiba Ahmed, Dipita Tasnim, Ahnaf Raisa, Adrita Aparajita
+                </div>
+                <div class="project-my-contribution">
+                  <span class="meta-label">My Contribution:</span> Developed AI chatbot integration, frontend development, and antibiotic course tracker.
+                </div>
+                <div class="project-documentation">
+                  <span class="meta-label">Documentation:</span>
+                  <a href="https://docs.google.com/document/d/1QamnzqntjM7tiMtMJ7MZ7ZS5gmUQv6zOyqqTYARF2Q8/edit?usp=sharing" class="doc-link">Project Doc</a> |
+                  <a href="https://github.com/nusaibuhh/antibiotics" class="doc-link">GitHub Repo</a> |
+                  <a href="https://drive.google.com/drive/folders/1SlhRJKJuiLg8NtBQPMTZPgML0Her8iY4?usp=sharing" class="doc-link">Demo Video</a>
+                </div>
+              </div>
+              <p class="project-description">ReMedAI is an AI-driven chatbot that promotes safer antibiotic use by suggesting evidence-based home remedies and flagging potentially unsafe prescriptions.</p>
+              <div class="project-technologies">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">Botpress</span>
+              </div>
+              <div class="project-status">Status: <span class="status-completed">Completed</span></div>
+            </div>
+            
+            <div class="research-project-card">
+              <div class="project-header">
+                <h4>Wearable Anxiety Detector</h4>
+                <span class="project-duration">2025</span>
+              </div>
+              <div class="project-meta-info">
+                <div class="project-contributors">
+                  <span class="meta-label">Contributors:</span> Nusaiba Ahmed, Najah Tasfia Jumana
+                </div>
+                <div class="project-my-contribution">
+                  <span class="meta-label">My Contribution:</span> A multimodal wearable I’m co-developing, where I contribute sensor selection, system design, and behavioral-signal analysis to detect anxiety and trigger calming interventions.
+                </div>
+                <div class="project-documentation">
+                  <span class="meta-label">Documentation:</span>
+                  <a href="#" class="doc-link">Project Documents</a> |
+                  <a href="#" class="doc-link">GitHub Repo</a> |
+                  <a href="#" class="doc-link">Video Demo</a>
+                </div>
+              </div>
+              <p class="project-description">A multimodal wearable that detects anxiety using physiological signals and digital behavior patterns to trigger calming interventions.</p>
+              <div class="project-technologies">
+                <span class="tech-tag">IoT Device</span>
+                <span class="tech-tag">Anxiety Detection</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Sensor Fusion</span>
+              </div>
+              <div class="project-status">Status: <span class="status-active">Building Prototype</span></div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+
+        <!-- Research Collaborations -->
+
+        
+      </div>
+    </section>
+
+    <!-- Miscellaneous Section -->
+    <section id="miscellaneous" class="misc-section">
+      <div class="misc-container">
+        <h2>Random Fun Stuff 🎉</h2>
+        <p class="misc-intro">Because life isn't all about algorithms and data structures! Here's a peek into the more playful side of my world.</p>
+        
+        <!-- Fun Facts -->
+        <div class="fun-facts-section">
+          <h3 class="misc-subtitle">🎯 Fun Facts About Me</h3>
+          <div class="fun-facts-grid">
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">🍵</div>
+              <h4>Tea Addict</h4>
+              <p>Earl Grey, green tea, masala chai - I have a tea for every mood and every moment of the day! ☕✨</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">🎨</div>
+              <h4>Digital Artist</h4>
+              <p>Creating magical worlds and characters with my digital brush - art is my escape into imagination! 🌟</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">✨</div>
+              <h4>Design Lover</h4>
+              <p>I believe good design should be beautiful and meaningful - aesthetics matter in everything! 💫</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">📚</div>
+              <h4>Psychology Bookworm</h4>
+              <p>Currently obsessed with psychology books - understanding the human mind fascinates me endlessly! 🧠</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">📱</div>
+              <h4>Webtoon Addict</h4>
+              <p>Currently binge-reading "Love Cycle" - webtoons are my guilty pleasure and emotional rollercoaster! 💕</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">🤘</div>
+              <h4>Metalhead</h4>
+              <p>Asking Alexandria, Bring Me The Horizon, Pierce The Veil - heavy metal fuels my soul! 🎸🔥</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">🍃</div>
+              <h4>Anime Enthusiast</h4>
+              <p>Currently watching Naruto and totally hooked! 🍥</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">✍️</div>
+              <h4>Poetry Soul</h4>
+              <p>Running an Instagram poetry page since 2020 (@raspberry_poetries_) - words are my way of painting emotions! 🌸</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">📝</div>
+              <h4>Former Blogger</h4>
+              <p>Used to blog about book reviews and relationship psychology - exploring human connections through words! 💭</p>
+            </div>
+            
+            <div class="fun-fact-card">
+              <div class="fact-emoji">💼</div>
+              <h4>Ex-Content Writer</h4>
+              <p>Freelanced as a content writer in 2022 but quit due to scammers - learned valuable life lessons! 🛡️</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Hobbies & Interests -->
+        <div class="hobbies-section">
+          <h3 class="misc-subtitle">🌈 When I'm Not Busy</h3>
+          <div class="hobbies-showcase">
+            
+            <div class="hobby-item">
+              <div class="hobby-icon">📱</div>
+              <div class="hobby-content">
+                <h4>Webtoon Scrolling</h4>
+                <p>Endlessly scrolling through captivating stories and beautiful art - my favorite digital escape!</p>
+                <div class="hobby-tags">
+                  <span class="hobby-tag">Romance</span>
+                  <span class="hobby-tag">Fantasy</span>
+                  <span class="hobby-tag">Drama</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="hobby-item">
+              <div class="hobby-icon">🎨</div>
+              <div class="hobby-content">
+                <h4>Design Creating</h4>
+                <p>Making eye-catching posters and intuitive UI designs - bringing ideas to life visually!</p>
+                <div class="hobby-tags">
+                  <span class="hobby-tag">Poster Design</span>
+                  <span class="hobby-tag">UI/UX</span>
+                  <span class="hobby-tag">Digital Art</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="hobby-item">
+              <div class="hobby-icon">🍜</div>
+              <div class="hobby-content">
+                <h4>Viral Noodle Experiments</h4>
+                <p>Trying every trending instant noodles recipe from TikTok and YouTube - my kitchen adventures!</p>
+                <div class="hobby-tags">
+                  <span class="hobby-tag">TikTok Recipes</span>
+                  <span class="hobby-tag">Instant Noodles</span>
+                  <span class="hobby-tag">Food Trends</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="hobby-item">
+              <div class="hobby-icon">😴</div>
+              <div class="hobby-content">
+                <h4>Power Napping</h4>
+                <p>Strategic naps to recharge my brain - because sometimes the best solutions come after a good rest!</p>
+                <div class="hobby-tags">
+                  <span class="hobby-tag">Self Care</span>
+                  <span class="hobby-tag">Energy Boost</span>
+                  <span class="hobby-tag">Mental Reset</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      
+        
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nusaiba Ahmed</p>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget">
+      <button id="chatbot-btn" aria-label="Contact me">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+      </button>
+      <div id="chatbot-popup" aria-hidden="true">
+        <div class="chatbot-header">
+          <h3>Hi there! 👋</h3>
+          <button id="chatbot-close" aria-label="Close">×</button>
+        </div>
+        <div class="chatbot-content">
+          <p>Thanks for visiting my site! I forgot to put my contact information so here it is. Feel free to reach out:</p>
+          <div class="contact-info">
+            <p>📧 <strong>Email:</strong> <a href="mailto:nusaiba.ahmed1@g.bracu.ac.bd">nusaiba.ahmed1@g.bracu.ac.bd</a></p>
+            <p>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nusaiba-ahmed-784787250" target="_blank" rel="noopener noreferrer">linkedin.com/in/nusaiba-ahmed</a></p>
+            <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/nusaibuhh" target="_blank" rel="noopener noreferrer">github.com/nusaibuhh</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Chatbot widget functionality
+      (function(){
+        const btn = document.getElementById('chatbot-btn');
+        const popup = document.getElementById('chatbot-popup');
+        const closeBtn = document.getElementById('chatbot-close');
+        
+        function showPopup(){
+          popup.classList.add('visible');
+          popup.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+        
+        function hidePopup(){
+          popup.classList.remove('visible');
+          popup.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        
+        btn.addEventListener('click', ()=>{
+          if(popup.classList.contains('visible')){
+            hidePopup();
+          } else {
+            showPopup();
+          }
+        });
+        
+        closeBtn.addEventListener('click', hidePopup);
+        
+        // Close when clicking outside
+        document.addEventListener('click', (e)=>{
+          if(!document.getElementById('chatbot-widget').contains(e.target)){
+            hidePopup();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
